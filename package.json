@@ -2,7 +2,11 @@
   "name": "weather_cli",
   "version": "1.0.0",
   "description": "CLI for getting data about weather",
-  "main": "index.js",
+  "main": "weather.js",
+  "bin":{
+    "weather": "weather.js"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
