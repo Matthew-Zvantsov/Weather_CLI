@@ -1,5 +1,9 @@
 import { getKeyValue } from "./storageService.js";
 import axios from 'axios';
+import { printError, beautyResp } from "./logResp.js";
+import dedent from "dedent";
+import chalk from "chalk"
+
 const sendRequest = async () => {
     let city = await getKeyValue('city');
     let token = await getKeyValue('token');
@@ -20,12 +24,18 @@ const sendRequest = async () => {
                 }
             })
             .then(response => {
-                console.log(response.data);
+                return beautyResp(response, city);
             })
         })
         .catch(error => {
-            console.log(error);
+            printError(error);
           });
+    }
+    else if(city == undefined){
+        return printError('Не указан город! \n Воспользуйтесь справкой');
+    }
+    else if(token == undefined){
+        return printError('Не указан токен запроса! \n Воспользуйтесь справкой');
     }
 }
 
