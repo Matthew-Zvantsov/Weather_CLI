@@ -1,6 +1,6 @@
 {
-  "name": "weather_cli",
-  "version": "1.0.0",
+  "name": "weather_cli_zvantsov",
+  "version": "1.0.1",
   "description": "CLI for getting data about weather",
   "main": "weather.js",
   "bin": {
@@ -8,6 +8,7 @@
   },
   "type": "module",
   "scripts": {
+    "start": "node weather.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
